@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Samples>
+  <Sample Title = "Functions Library" Name = "FunctionsLibrary"
+            Description = "This sample demonstrates the calculation using various Excel-like functions." />
+  <Sample Title = "CalcQuick Calculation" Name = "CalcQuick"
+            Description = "This sample demonstrates the calculation via keys and expressions using CalcQuick." />
+</Samples>

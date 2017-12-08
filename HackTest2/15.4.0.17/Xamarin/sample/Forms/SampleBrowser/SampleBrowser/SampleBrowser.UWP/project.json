@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "Microsoft.NETCore.UniversalWindowsPlatform": "5.1.0",
+	  "Win2D.uwp": "1.21.0","SampleBrowser.Calculate": "15.4.0.17","SampleBrowser.DataSource": "15.4.0.17","SampleBrowser.DocIO": "15.4.0.17","SampleBrowser.PDF": "15.4.0.17","SampleBrowser.Presentation": "15.4.0.17","SampleBrowser.SfAutoComplete": "15.4.0.17","SampleBrowser.SfBarcode": "15.4.0.17","SampleBrowser.SfBusyIndicator": "15.4.0.17","SampleBrowser.SfCalendar": "15.4.0.17","SampleBrowser.SfSchedule": "15.4.0.17","SampleBrowser.SfChart": "15.4.0.17","SampleBrowser.SfCircularGauge": "15.4.0.17","SampleBrowser.SfDataGrid": "15.4.0.17","SampleBrowser.SfDiagram": "15.4.0.17","SampleBrowser.SfDigitalGauge": "15.4.0.17","SampleBrowser.SfImageEditor": "15.4.0.17","SampleBrowser.SfKanban": "15.4.0.17","SampleBrowser.SfLinearGauge": "15.4.0.17","SampleBrowser.SfListView": "15.4.0.17","SampleBrowser.SfMaps": "15.4.0.17","SampleBrowser.SfNavigationDrawer": "15.4.0.17","SampleBrowser.SfNumericUpDown": "15.4.0.17","SampleBrowser.SfNumericTextBox": "15.4.0.17","SampleBrowser.SfCarousel": "15.4.0.17","SampleBrowser.SfRangeSlider": "15.4.0.17","SampleBrowser.SfPdfViewer": "15.4.0.17","SampleBrowser.SfPicker": "15.4.0.17","SampleBrowser.SfPullToRefresh": "15.4.0.17","SampleBrowser.SfRadialMenu": "15.4.0.17","SampleBrowser.SfRangeNavigator": "15.4.0.17","SampleBrowser.SfRating": "15.4.0.17","SampleBrowser.SfRotator": "15.4.0.17","SampleBrowser.SfSparkline": "15.4.0.17","SampleBrowser.SfSunburstChart": "15.4.0.17","SampleBrowser.SfTreeMap": "15.4.0.17","SampleBrowser.XlsIO": "15.4.0.17","Syncfusion.Xamarin.Calculate": "15.4.0.17","Syncfusion.Xamarin.Core": "15.4.0.17","Syncfusion.Xamarin.Compression": "15.4.0.17","Syncfusion.Xamarin.DataSource": "15.4.0.17","Syncfusion.Xamarin.DocIO": "15.4.0.17","Syncfusion.Xamarin.GridCommon": "15.4.0.17","Syncfusion.Xamarin.Pdf": "15.4.0.17","Syncfusion.Xamarin.Presentation": "15.4.0.17","Syncfusion.Xamarin.SfAutoComplete": "15.4.0.17","Syncfusion.Xamarin.SfBarcode": "15.4.0.17","Syncfusion.Xamarin.SfBusyIndicator": "15.4.0.17","Syncfusion.Xamarin.SfCalendar": "15.4.0.17","Syncfusion.Xamarin.SfSchedule": "15.4.0.17","Syncfusion.Xamarin.SfChart": "15.4.0.17","Syncfusion.Xamarin.SfDataGrid": "15.4.0.17",
+    "Syncfusion.Xamarin.SfGridConverter":"*","Syncfusion.Xamarin.SfDiagram": "15.4.0.17","Syncfusion.Xamarin.SfGauge": "15.4.0.17","Syncfusion.Xamarin.SfImageEditor": "15.4.0.17","Syncfusion.Xamarin.SfKanban": "15.4.0.17","Syncfusion.Xamarin.SfListView": "15.4.0.17","Syncfusion.Xamarin.SfMaps": "15.4.0.17","Syncfusion.Xamarin.SfNavigationDrawer": "15.4.0.17","Syncfusion.Xamarin.SfNumericUpDown": "15.4.0.17","Syncfusion.Xamarin.SfNumericTextBox": "15.4.0.17","Syncfusion.Xamarin.SfCarousel": "15.4.0.17","Syncfusion.Xamarin.SfRangeSlider": "15.4.0.17","Syncfusion.Xamarin.SfPdfViewer": "15.4.0.17","Syncfusion.Xamarin.SfPicker": "15.4.0.17","Syncfusion.Xamarin.SfPullToRefresh": "15.4.0.17","Syncfusion.Xamarin.SfRadialMenu": "15.4.0.17","Syncfusion.Xamarin.SfRating": "15.4.0.17","Syncfusion.Xamarin.SfRotator": "15.4.0.17","Syncfusion.Xamarin.SfSparkline": "15.4.0.17","Syncfusion.Xamarin.SfSunburstChart": "15.4.0.17","Syncfusion.Xamarin.SfTreeMap": "15.4.0.17","Syncfusion.Xamarin.XlsIO": "15.4.0.17",
+    "Xamarin.Forms": "2.4.0.280"
+  },
+  "frameworks": {
+    "uap10.0": {}
+  },
+  "runtimes": {
+    "win10-arm": {},
+    "win10-arm-aot": {},
+    "win10-x86": {},
+    "win10-x86-aot": {},
+    "win10-x64": {},
+    "win10-x64-aot": {}
+  }
+}

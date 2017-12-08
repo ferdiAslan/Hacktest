@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HackTest2.Views;
+using System;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,10 +13,7 @@ namespace HackTest2
 		{
 			InitializeComponent();
 
-			if (Device.RuntimePlatform == Device.iOS)
-				MainPage = new MainPage();
-			else
-				MainPage = new NavigationPage(new MainPage());
+			MainPage = new RootPage();
 		}
 	}
 }
