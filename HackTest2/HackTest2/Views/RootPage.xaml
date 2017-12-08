@@ -1,17 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HackTest2.Views.RootPage"
+				  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+				  x:Class="HackTest2.Views.RootPage"
 				  MasterBehavior="Popover">
 	<MasterDetailPage.Master>
 		<ContentPage Title="Master">
 			<ContentPage.Content>
-				<StackLayout>
-					<!--<Label Text="Ferdi" />
-					<Button Text="Menu Item 1" BackgroundColor="Yellow" Clicked="OnButton1Clicked"/>
-					<Button Text="Menu Item 2" BackgroundColor="Red" Clicked="OnButton2Clicked"/>-->
-					<Image Source="menu.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
-				</StackLayout>
+				<Grid BackgroundColor="#2987D6">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="500"/>
+						<RowDefinition Height="*"/>
+					</Grid.RowDefinitions>
+					<Image Grid.RowSpan="2" Source="menu.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+					<Grid Grid.Row="1" Margin="5,0">
+						<Grid.GestureRecognizers>
+							<TapGestureRecognizer Tapped="OnButton2Clicked"/>
+						</Grid.GestureRecognizers>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="50"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+						<Image Grid.ColumnSpan="2" Source="button.png" HorizontalOptions="StartAndExpand" VerticalOptions="Start"/>
+						<Label Grid.Column="1" Text="Ferdi" TextColor="#CCE2F5" Font="17" HorizontalOptions="Start" VerticalOptions="Start" Margin="0,10,0,0"/>
+					</Grid>
+				</Grid>
 			</ContentPage.Content>
 		</ContentPage>
 	</MasterDetailPage.Master>

@@ -2,12 +2,24 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HackTest2.Pages.DetailPage2"
-			 Title="DetailPage2">
+			 Title="DetailPage2" >
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="This is Detail Page 2"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="70"/>
+				<RowDefinition Height="50"/>
+			</Grid.RowDefinitions>
+			<Image Grid.ColumnSpan="3" Margin="0,0,0,30" Source="yaratik.png" Aspect="AspectFit" HeightRequest="220" VerticalOptions="End"/>
+			<Image x:Name="Bulut" Grid.ColumnSpan="3" Margin="0,30,0,0" Source="bulut.png" Aspect="AspectFit" 
+				   HeightRequest="200" VerticalOptions="Start" IsVisible="False"/>
+			<Image x:Name="buton1" IsVisible="False"
+				   Grid.Row="1" Source="option1.png" HeightRequest="50" Aspect="AspectFit" />
+			<Image x:Name="buton2" IsVisible="False"
+				   Grid.Row="1" Grid.Column="1" Source="option2.png" HeightRequest="70" Aspect="AspectFit" />
+			<Image x:Name="buton3" IsVisible="False"
+				   Grid.Row="1" Grid.Column="2" Source="option3.png" HeightRequest="70" Aspect="AspectFit" />
+			<BoxView Grid.ColumnSpan="3" Grid.Row="2" BackgroundColor="#2987D6" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+		</Grid>
     </ContentPage.Content>
 </ContentPage>
