@@ -7,9 +7,10 @@
 		<ContentPage Title="Master">
 			<ContentPage.Content>
 				<StackLayout>
-					<Label Text="Ferdi" />
+					<!--<Label Text="Ferdi" />
 					<Button Text="Menu Item 1" BackgroundColor="Yellow" Clicked="OnButton1Clicked"/>
-					<Button Text="Menu Item 2" BackgroundColor="Red" Clicked="OnButton2Clicked"/>
+					<Button Text="Menu Item 2" BackgroundColor="Red" Clicked="OnButton2Clicked"/>-->
+					<Image Source="menu.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
 				</StackLayout>
 			</ContentPage.Content>
 		</ContentPage>
