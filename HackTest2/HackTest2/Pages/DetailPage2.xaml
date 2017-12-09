@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:views="clr-namespace:HackTest2.Views;assembly=HackTest2"
              x:Class="HackTest2.Pages.DetailPage2"
 			 Title="YapıKredi" >
     <ContentPage.Content>
@@ -10,21 +11,32 @@
 				<RowDefinition Height="70"/>
 				<RowDefinition Height="50"/>
 			</Grid.RowDefinitions>
-			<Image x:Name="yaratik" Grid.ColumnSpan="3" Margin="0,0,0,30" Source="yaratik.png" Aspect="AspectFit" HeightRequest="220" VerticalOptions="End"/>
+			<views:View1 x:Name="yaratik" Grid.ColumnSpan="3" Margin="0,0,0,30" SourceImage="yaratik.png" HeightRequest="220" VerticalOptions="End">
+				<views:View1.GestureRecognizers>
+					<TapGestureRecognizer Tapped="yaratikTapped"/>
+				</views:View1.GestureRecognizers>
+			</views:View1>
+
 			<Image x:Name="Bulut" Grid.ColumnSpan="3" Margin="0,30,0,0" Source="bulut.png" Aspect="AspectFit" 
-				   HeightRequest="200" VerticalOptions="Start" IsVisible="False"/>
-			<Image x:Name="buton1" IsVisible="False" BackgroundColor="Aqua"
-				   Grid.Row="1" Source="option1.png" HeightRequest="50" Aspect="AspectFit">
-				<Image.GestureRecognizers>
+				   HeightRequest="200" VerticalOptions="Start" IsVisible="False" InputTransparent="True"/>
+			<views:View1 x:Name="buton1" Grid.Row="1" SourceImage="option1.png" HeightRequest="50" WidthRequest="50" IsVisible="False">
+				<views:View1.GestureRecognizers>
 					<TapGestureRecognizer Tapped="OpenFrame1"/>
-				</Image.GestureRecognizers>
-			</Image>
-			<Image x:Name="buton2" IsVisible="False"
+				</views:View1.GestureRecognizers>
+			</views:View1>
+			
+			<views:View1 x:Name="buton2" Grid.Row="1" SourceImage="option2.png" HeightRequest="50" 
+						 WidthRequest="50" IsVisible="False"  Grid.Column="1">
+				<views:View1.GestureRecognizers>
+					<TapGestureRecognizer Tapped="OpenFrame2"/>
+				</views:View1.GestureRecognizers>
+			</views:View1>
+			<!--<Image x:Name="buton2" IsVisible="False"
 				   Grid.Row="1" Grid.Column="1" Source="option2.png" HeightRequest="70" Aspect="AspectFit" >
 				<Image.GestureRecognizers>
 					<TapGestureRecognizer Tapped="OpenFrame2"/>
 				</Image.GestureRecognizers>
-			</Image>
+			</Image>-->
 			<Image x:Name="buton3" IsVisible="False"
 				   Grid.Row="1" Grid.Column="2" Source="option3.png" HeightRequest="70" Aspect="AspectFit">
 				<Image.GestureRecognizers>
@@ -32,7 +44,7 @@
 				</Image.GestureRecognizers>
 			</Image>
 			<Frame Grid.ColumnSpan="3" HeightRequest="150" x:Name="frame" IsVisible="False" Margin="50,0,50,30" BackgroundColor="#66AFEEEE"
-				   HorizontalOptions="FillAndExpand" CornerRadius="10" VerticalOptions="End">
+				   HorizontalOptions="FillAndExpand" CornerRadius="10" VerticalOptions="End" InputTransparent="True">
 				<!--<Label Text="Ferdi" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center"/>-->
 				<StackLayout x:Name="stack"/>
 			</Frame>

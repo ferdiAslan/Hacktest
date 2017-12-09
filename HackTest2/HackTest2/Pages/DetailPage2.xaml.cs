@@ -54,6 +54,7 @@ namespace HackTest2.Pages
 				frame.IsVisible = true;
 				IsOpen = false;
 			}
+			frame.IsVisible = true;
 			PrepareList(ListType.compaing);
 
 		}
@@ -67,12 +68,14 @@ namespace HackTest2.Pages
 				IsOpen = false;
 			}
 
+			frame.IsVisible = true;
 			PrepareList(ListType.investment);
 
 			GetData data = new GetData();
 			data.getMasterData();
 
 		}
+
 		private async void OpenFrame3(object sender, EventArgs e)
 		{
 			if (IsOpen)
@@ -83,7 +86,23 @@ namespace HackTest2.Pages
 				IsOpen = false;
 			}
 
+			frame.IsVisible = true;
 			PrepareList(ListType.banking);
+
+		}
+
+		private async void yaratikTapped(object sender, EventArgs e)
+		{
+			if (IsOpen)
+			{
+				Bulut.FadeTo(0, 300);
+				await yaratik.TranslateTo(0, -185, 500);
+				IsOpen = false;
+			}
+
+			yaratik.SourceImage = "hayvan2.png";
+			frame.IsVisible = false;
+			//PrepareList(ListType.banking);
 
 		}
 
@@ -111,6 +130,8 @@ namespace HackTest2.Pages
 				stack.Children.Add(label);
 			}
 		}
+
+
 	}
 	public enum ListType
 	{

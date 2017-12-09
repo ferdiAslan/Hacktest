@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView x:Name="self"
+			 xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HackTest2.Views.View1">
+	<ContentView.Content>
+		<Image x:Name="_image" Source="{Binding SourceImage, Source={x:Reference self}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+	</ContentView.Content>
+</ContentView>

@@ -30,7 +30,7 @@ namespace HackTest2.data
 			client.DefaultRequestHeaders.Accept.Clear();
 			client.DefaultRequestHeaders.Accept.Add(
 				new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
-			client.DefaultRequestHeaders.Add("Authorization", "Bearer 0fd2fd10-4169-4032-b8bd-1a9641ccb786");
+			client.DefaultRequestHeaders.Add("Authorization", "Bearer 7192fa39-54e4-44be-8bb6-a38dbe1e8dc7");
 
 			var msg = await client.GetStringAsync("https://api.yapikredi.com.tr/api/investmentrates/v1/currencyRates");
 
