@@ -13,9 +13,13 @@ namespace HackTest2.Pages
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class DetailPage2 : ContentPage
 	{
+		private List<string> suggestionList;
+		private bool IsOpen;
 		public DetailPage2 ()
 		{
 			InitializeComponent ();
+			suggestionList = new List<string>();
+			IsOpen = true;
 		}
 		protected async override void OnAppearing()
 		{
@@ -41,13 +45,77 @@ namespace HackTest2.Pages
 			data.getMasterData();
 		}
 
-		private async void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
+		private async void OpenFrame1(object sender, EventArgs e)
 		{
-			//var page = new PopupPage1();
-			Bulut.FadeTo(0, 300);
-			//await PopupNavigation.PushAsync(page);
-			await yaratik.TranslateTo(0, -185, 500);
-			frame.IsVisible = true;
+			if (IsOpen)
+			{
+				Bulut.FadeTo(0, 300);
+				await yaratik.TranslateTo(0, -185, 500);
+				frame.IsVisible = true;
+				IsOpen = false;
+			}
+			PrepareList(ListType.compaing);
+
+		}
+		private async void OpenFrame2(object sender, EventArgs e)
+		{
+			if (IsOpen)
+			{
+				Bulut.FadeTo(0, 300);
+				await yaratik.TranslateTo(0, -185, 500);
+				frame.IsVisible = true;
+				IsOpen = false;
+			}
+
+			PrepareList(ListType.investment);
+
+			GetData data = new GetData();
+			data.getMasterData();
+
+		}
+		private async void OpenFrame3(object sender, EventArgs e)
+		{
+			if (IsOpen)
+			{
+				Bulut.FadeTo(0, 300);
+				await yaratik.TranslateTo(0, -185, 500);
+				frame.IsVisible = true;
+				IsOpen = false;
+			}
+
+			PrepareList(ListType.banking);
+
+		}
+
+		private void PrepareList(ListType type )
+		{
+			suggestionList.Clear();
+			stack.Children.Clear();
+			switch (type)
+			{
+				case ListType.compaing:
+					suggestionList = new List<string> { "1", "2", "3" };
+					break;
+				case ListType.investment:
+					suggestionList = new List<string> { "4", "5", "6" };
+					break;
+				case ListType.banking:
+					suggestionList = new List<string> { "7", "78", "9" };
+					break;
+				default:
+					break;
+			}
+			foreach(var item in suggestionList)
+			{
+				var label = new Label { Text = item };
+				stack.Children.Add(label);
+			}
 		}
 	}
+	public enum ListType
+	{
+		compaing,
+		investment,
+		banking
+	}		
 }

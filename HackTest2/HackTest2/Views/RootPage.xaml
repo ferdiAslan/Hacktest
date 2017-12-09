@@ -7,6 +7,9 @@
 		<ContentPage Title="Master">
 			<ContentPage.Content>
 				<Grid BackgroundColor="#2987D6">
+					<Grid.GestureRecognizers>
+						<TapGestureRecognizer Tapped="OnButton1Clicked"/>
+					</Grid.GestureRecognizers>
 					<Grid.RowDefinitions>
 						<RowDefinition Height="500"/>
 						<RowDefinition Height="*"/>

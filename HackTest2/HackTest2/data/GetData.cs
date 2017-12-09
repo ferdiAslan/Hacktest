@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -29,10 +30,35 @@ namespace HackTest2.data
 			client.DefaultRequestHeaders.Accept.Clear();
 			client.DefaultRequestHeaders.Accept.Add(
 				new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
-			client.DefaultRequestHeaders.Add("Authorization", "Bearer cef9ef54-758d-47e8-8ad4-336e4c698d27");
+			client.DefaultRequestHeaders.Add("Authorization", "Bearer 0fd2fd10-4169-4032-b8bd-1a9641ccb786");
 
 			var msg = await client.GetStringAsync("https://api.yapikredi.com.tr/api/investmentrates/v1/currencyRates");
+
+			ResponseClass obj = JsonConvert.DeserializeObject<ResponseClass>(msg);
 		}
 
+	}
+
+	public class CurrencyRates
+	{
+		public double averageRate { get; set; }
+		public double sellRate { get; set; }
+		public double previousDaySellRate { get; set; }
+		public double changeRatioDaily { get; set; }
+		public double previousDayBuyRate { get; set; }
+		public double previousDayAverageRate { get; set; }
+		public double buyRate { get; set; }
+		public string minorCurrency { get; set; }
+		public string majorCurrency { get; set; }
+	}
+
+	public class CurrencyRates1
+	{
+		public List<CurrencyRates> exchangeRateList { get; set; }
+	}
+
+	public class ResponseClass
+	{
+		public CurrencyRates1 response { get; set; }
 	}
 }
