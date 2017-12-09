@@ -113,16 +113,6 @@ namespace HackTest2.Pages
 			int a = 5;
 			if(mapImage.IsVisible)
 				(Application.Current.MainPage as MasterDetailPage).Detail = new NavigationPage(new MapPage());
-			//if (IsOpen)
-			//{
-			//	Bulut.FadeTo(0, 300);
-			//	await yaratik.TranslateTo(0, -185, 500);
-			//	IsOpen = false;
-			//}
-
-			//yaratik.SourceImage = "hayvan2.png";
-			//frame.IsVisible = false;
-			////PrepareList(ListType.banking);
 
 		}
 

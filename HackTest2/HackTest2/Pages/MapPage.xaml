@@ -1,12 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:views="clr-namespace:HackTest2.Views;assembly=HackTest2"
              x:Class="HackTest2.Pages.MapPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="50"/>
+			</Grid.RowDefinitions>
+
+			<Image x:Name="MapImage" Source="map_2.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+			<ContentView HeightRequest="130" WidthRequest="100" HorizontalOptions="Center" VerticalOptions="End" BackgroundColor="Transparent" >
+				<ContentView.GestureRecognizers>
+					<TapGestureRecognizer Tapped="LevelTapped"/>
+				</ContentView.GestureRecognizers>
+			</ContentView>
+			
+			<ContentView HeightRequest="130" WidthRequest="70" HorizontalOptions="End" VerticalOptions="Start"
+						 BackgroundColor="Red" Margin="0,150,0,0" >
+				<ContentView.GestureRecognizers>
+					<TapGestureRecognizer Tapped="pointTapped"/>
+				</ContentView.GestureRecognizers>
+			</ContentView>
+
+			<ContentView  Grid.Row="1" BackgroundColor="#2987D6" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+				<views:View1 SourceImage="map.png" HorizontalOptions="Center" IsVisible="True"
+							 HeightRequest="40" WidthRequest="40" VerticalOptions="Center" />
+				<ContentView.GestureRecognizers>
+					<TapGestureRecognizer Tapped="mapTapped"/>
+				</ContentView.GestureRecognizers>
+			</ContentView>
+
+		</Grid>
+	</ContentPage.Content>
 </ContentPage>
