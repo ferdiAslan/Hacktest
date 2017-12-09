@@ -1,4 +1,5 @@
 ﻿using HackTest2.data;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,6 +39,15 @@ namespace HackTest2.Pages
 		{
 			GetData data = new GetData();
 			data.getMasterData();
+		}
+
+		private async void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
+		{
+			//var page = new PopupPage1();
+			Bulut.FadeTo(0, 300);
+			//await PopupNavigation.PushAsync(page);
+			await yaratik.TranslateTo(0, -185, 500);
+			frame.IsVisible = true;
 		}
 	}
 }
