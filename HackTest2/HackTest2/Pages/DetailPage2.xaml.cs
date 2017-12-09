@@ -18,7 +18,7 @@ namespace HackTest2.Pages
 		public DetailPage2 ()
 		{
 			InitializeComponent ();
-			suggestionList = new List<string>();
+			suggestionList = new List<string> { "1", "2", "3" };
 			IsOpen = true;
 		}
 		protected async override void OnAppearing()
@@ -100,9 +100,29 @@ namespace HackTest2.Pages
 				IsOpen = false;
 			}
 
+			PrepareList(ListType.compaing);
 			yaratik.SourceImage = "hayvan2.png";
-			frame.IsVisible = false;
+			frame.IsVisible = true;
+			mapImage.IsVisible = true;
 			//PrepareList(ListType.banking);
+
+		}
+
+		private async void mapTapped(object sender, EventArgs e)
+		{
+			int a = 5;
+			if(mapImage.IsVisible)
+				(Application.Current.MainPage as MasterDetailPage).Detail = new NavigationPage(new MapPage());
+			//if (IsOpen)
+			//{
+			//	Bulut.FadeTo(0, 300);
+			//	await yaratik.TranslateTo(0, -185, 500);
+			//	IsOpen = false;
+			//}
+
+			//yaratik.SourceImage = "hayvan2.png";
+			//frame.IsVisible = false;
+			////PrepareList(ListType.banking);
 
 		}
 

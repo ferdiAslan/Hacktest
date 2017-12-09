@@ -19,36 +19,49 @@
 
 			<Image x:Name="Bulut" Grid.ColumnSpan="3" Margin="0,30,0,0" Source="bulut.png" Aspect="AspectFit" 
 				   HeightRequest="200" VerticalOptions="Start" IsVisible="False" InputTransparent="True"/>
+
+			<!--<StackLayout x:Name="mapStack" IsVisible="False" InputTransparent="True" HorizontalOptions="CenterAndExpand" 
+						 VerticalOptions="End" Margin="0,0,0,30" Spacing="30" BackgroundColor="Red" >
+				<Label Text="Level 120" TextColor="Black" Font="25" HorizontalOptions="Center"/>
+				<views:View1 x:Name="mapImage" SourceImage="map.png" HeightRequest="90" WidthRequest="90" />
+				<StackLayout.GestureRecognizers>
+					<TapGestureRecognizer Tapped="mapTapped"/>
+				</StackLayout.GestureRecognizers>
+			</StackLayout>-->
+			
+			
 			<views:View1 x:Name="buton1" Grid.Row="1" SourceImage="option1.png" HeightRequest="50" WidthRequest="50" IsVisible="False">
 				<views:View1.GestureRecognizers>
 					<TapGestureRecognizer Tapped="OpenFrame1"/>
 				</views:View1.GestureRecognizers>
 			</views:View1>
-			
+
 			<views:View1 x:Name="buton2" Grid.Row="1" SourceImage="option2.png" HeightRequest="50" 
 						 WidthRequest="50" IsVisible="False"  Grid.Column="1">
 				<views:View1.GestureRecognizers>
 					<TapGestureRecognizer Tapped="OpenFrame2"/>
 				</views:View1.GestureRecognizers>
 			</views:View1>
-			<!--<Image x:Name="buton2" IsVisible="False"
-				   Grid.Row="1" Grid.Column="1" Source="option2.png" HeightRequest="70" Aspect="AspectFit" >
-				<Image.GestureRecognizers>
-					<TapGestureRecognizer Tapped="OpenFrame2"/>
-				</Image.GestureRecognizers>
-			</Image>-->
-			<Image x:Name="buton3" IsVisible="False"
-				   Grid.Row="1" Grid.Column="2" Source="option3.png" HeightRequest="70" Aspect="AspectFit">
-				<Image.GestureRecognizers>
+
+			<views:View1 x:Name="buton3" Grid.Row="1" SourceImage="option3.png" HeightRequest="50" 
+						 WidthRequest="50" IsVisible="False"  Grid.Column="2">
+				<views:View1.GestureRecognizers>
 					<TapGestureRecognizer Tapped="OpenFrame3"/>
-				</Image.GestureRecognizers>
-			</Image>
+				</views:View1.GestureRecognizers>
+			</views:View1>
+			
 			<Frame Grid.ColumnSpan="3" HeightRequest="150" x:Name="frame" IsVisible="False" Margin="50,0,50,30" BackgroundColor="#66AFEEEE"
 				   HorizontalOptions="FillAndExpand" CornerRadius="10" VerticalOptions="End" InputTransparent="True">
 				<!--<Label Text="Ferdi" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center"/>-->
 				<StackLayout x:Name="stack"/>
 			</Frame>
-			<BoxView Grid.ColumnSpan="3" Grid.Row="2" BackgroundColor="#2987D6" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+			<ContentView Grid.ColumnSpan="3" Grid.Row="2" BackgroundColor="#2987D6" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+				<views:View1 x:Name="mapImage" SourceImage="map.png" HorizontalOptions="Center" IsVisible="False"
+							 HeightRequest="40" WidthRequest="40" VerticalOptions="Center" />
+				<ContentView.GestureRecognizers>
+					<TapGestureRecognizer Tapped="mapTapped"/>
+				</ContentView.GestureRecognizers>
+			</ContentView>
 		</Grid>
     </ContentPage.Content>
 </ContentPage>
