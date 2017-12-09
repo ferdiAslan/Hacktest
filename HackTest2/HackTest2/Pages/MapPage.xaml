@@ -19,7 +19,7 @@
 			</ContentView>
 			
 			<ContentView HeightRequest="130" WidthRequest="70" HorizontalOptions="End" VerticalOptions="Start"
-						 BackgroundColor="Red" Margin="0,150,0,0" >
+						 BackgroundColor="Transparent" Margin="0,150,0,0" >
 				<ContentView.GestureRecognizers>
 					<TapGestureRecognizer Tapped="pointTapped"/>
 				</ContentView.GestureRecognizers>

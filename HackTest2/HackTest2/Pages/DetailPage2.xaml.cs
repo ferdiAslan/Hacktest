@@ -39,11 +39,11 @@ namespace HackTest2.Pages
 			buton3.IsVisible = true;
 		}
 
-		private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
-		{
-			GetData data = new GetData();
-			data.getMasterData();
-		}
+		//private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+		//{
+		//	ApiData data = new ApiData();
+		//	data.getMasterData();
+		//}
 
 		private async void OpenFrame1(object sender, EventArgs e)
 		{
@@ -71,8 +71,8 @@ namespace HackTest2.Pages
 			frame.IsVisible = true;
 			PrepareList(ListType.investment);
 
-			GetData data = new GetData();
-			data.getMasterData();
+			ApiData data = new ApiData();
+			var asd = await data.GetCurrencyRates();
 
 		}
 

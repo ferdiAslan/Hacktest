@@ -39,6 +39,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="data\Constants.cs" />
+    <Compile Include="data\DataModels.cs" />
     <Compile Include="data\GetData.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Pages\DetailPage1.xaml.cs">

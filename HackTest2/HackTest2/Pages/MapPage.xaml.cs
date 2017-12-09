@@ -36,7 +36,7 @@ namespace HackTest2.Pages
 		{
 			if (_typeofpage == MapPageType.type2)
 			{
-				MapImage.Source = ImageSource.FromFile("map.png");
+				MapImage.Source = ImageSource.FromFile("map_4.png");
 				_typeofpage = MapPageType.type3;
 			}
 
