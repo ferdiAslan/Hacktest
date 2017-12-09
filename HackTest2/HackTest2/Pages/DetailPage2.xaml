@@ -18,7 +18,11 @@
 			<Image x:Name="buton2" IsVisible="False"
 				   Grid.Row="1" Grid.Column="1" Source="option2.png" HeightRequest="70" Aspect="AspectFit" />
 			<Image x:Name="buton3" IsVisible="False"
-				   Grid.Row="1" Grid.Column="2" Source="option3.png" HeightRequest="70" Aspect="AspectFit" />
+				   Grid.Row="1" Grid.Column="2" Source="option3.png" HeightRequest="70" Aspect="AspectFit">
+				<Image.GestureRecognizers>
+					<TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+				</Image.GestureRecognizers>
+			</Image>
 			<BoxView Grid.ColumnSpan="3" Grid.Row="2" BackgroundColor="#2987D6" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
 		</Grid>
     </ContentPage.Content>

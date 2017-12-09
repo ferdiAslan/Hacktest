@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HackTest2.data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,6 +32,12 @@ namespace HackTest2.Pages
 			buton2.IsVisible = true;
 			await Task.Delay(500);
 			buton3.IsVisible = true;
+		}
+
+		private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+		{
+			GetData data = new GetData();
+			data.getMasterData();
 		}
 	}
 }
