@@ -34,20 +34,28 @@ namespace HackTest2.data
 			return obj;
 		}
 
+		public async Task<AccountResponceClass> GetCustomerList()
+		{
+			AccountResponceClass obj = await GetAsync<AccountResponceClass>("https://api.yapikredi.com.tr/api/simulationdata/v1/listTestData");
+			return obj;
+		}
+
+		public async Task<TransactionResponce> GetTransList(TransactionRequest request)
+		{
+			var stringContent = new StringContent(JsonConvert.SerializeObject(request), Encoding.UTF8, "application/json");
+			
+
+			var myHttpClient = await GetHttpClient();
+			var response = await myHttpClient.PostAsync(new Uri("https://api.yapikredi.com.tr/api/currentAccounts/account/v1/accountTransactionList"), stringContent);
+
+			var json = await response.Content.ReadAsStringAsync();
+			TransactionResponce result = JsonConvert.DeserializeObject<TransactionResponce>(json, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
+
+			return result;
+		}
+
 		private async Task<string> getToken()
 		{
-			//LoginModel logindata = new LoginModel
-			//{
-			//	scope = "oob",
-			//	client_secret = "67947fbb8ccd44b097f060272c565dce",
-			//	grant_type = "client_credentials",
-			//	client_id = "l7xxacee8141363e466ab29f6966426763b9",
-			//};
-			//var content = JsonConvert.SerializeObject(logindata);
-			//StringContent request = new StringContent(content);
-			//var client = new HttpClient(new HttpClientHandler());
-			//var response = await client.PostAsync(new Uri("https://api.yapikredi.com.tr/auth/oauth/v2/token"), request);
-
 			var formContent = new FormUrlEncodedContent(new[]
 			{
 				new KeyValuePair<string, string>("scope", "oob"),

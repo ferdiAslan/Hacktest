@@ -18,8 +18,10 @@ namespace HackTest2.Pages
 		public DetailPage2 ()
 		{
 			InitializeComponent ();
+			ProvideData();
 			suggestionList = new List<string> { "1", "2", "3" };
 			IsOpen = true;
+			
 		}
 		protected async override void OnAppearing()
 		{
@@ -71,8 +73,12 @@ namespace HackTest2.Pages
 			frame.IsVisible = true;
 			PrepareList(ListType.investment);
 
-			ApiData data = new ApiData();
-			var asd = await data.GetCurrencyRates();
+			//ApiData data = new ApiData();
+			//var asd = await data.GetCurrencyRates();
+			//var asd = await data.GetTransList();
+
+			//GetAzureData azuredata = new GetAzureData();
+			//var clasification = await azuredata.getIncomeLevelClassData();
 
 		}
 
@@ -139,6 +145,48 @@ namespace HackTest2.Pages
 				var label = new Label { Text = item };
 				stack.Children.Add(label);
 			}
+		}
+
+		private async void ProvideData()
+		{
+			ApiData data = new ApiData();
+			GetAzureData azureData = new GetAzureData();
+
+			TransactionRequest request = new TransactionRequest
+			{
+				accountNo = "10000846",
+				ccy = "TL",
+				continuousSearch = true,
+				descSort = true,
+				startDate = DateTime.Now.Subtract(TimeSpan.FromDays(60)),
+				endDate = DateTime.Now.Add(TimeSpan.FromDays(60)),
+				noOfPage = 1,
+				noOfRecs = 7,
+				postNo = 0
+			};
+
+			var _list = await data.GetTransList(request);
+
+			AzureExpenceData expenceData = new AzureExpenceData
+			{
+				accountid = request.accountNo,
+				akaryakit = _list.response.Return.list[0].amount,
+				altın = _list.response.Return.list[1].amount,
+				döviz = _list.response.Return.list[2].amount,
+				giyim = _list.response.Return.list[3].amount,
+				kira = _list.response.Return.list[4].amount,
+				kozmetik = _list.response.Return.list[5].amount,
+				yiyecek = _list.response.Return.list[6].amount,
+			};
+
+			double amount = 0;
+			foreach (var item in _list.response.Return.list)
+				amount += item.amount;
+
+			var firstClassification = await azureData.getExpenseClassificationData(expenceData);
+
+			var secondClassfication = await azureData.getIncomeLevelClassData(request.accountNo, amount.ToString());
+
 		}
 
 
