@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 			 xmlns:views="clr-namespace:HackTest2.Views;assembly=HackTest2"
-             x:Class="HackTest2.Pages.MapPage">
+             x:Class="HackTest2.Pages.MapPage"
+			 Title="YapıKredi">
     <ContentPage.Content>
 
 		<Grid>
@@ -25,13 +26,14 @@
 				</ContentView.GestureRecognizers>
 			</ContentView>
 
-			<ContentView  Grid.Row="1" BackgroundColor="#2987D6" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+			<Grid  Grid.Row="1" BackgroundColor="#2987D6" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 				<views:View1 SourceImage="map.png" HorizontalOptions="Center" IsVisible="True"
 							 HeightRequest="40" WidthRequest="40" VerticalOptions="Center" />
-				<ContentView.GestureRecognizers>
+				<Image Source="badge.png" HeightRequest="40" WidthRequest="40" VerticalOptions="Center" HorizontalOptions="End"/>
+				<Grid.GestureRecognizers>
 					<TapGestureRecognizer Tapped="mapTapped"/>
-				</ContentView.GestureRecognizers>
-			</ContentView>
+				</Grid.GestureRecognizers>
+			</Grid>
 
 		</Grid>
 	</ContentPage.Content>

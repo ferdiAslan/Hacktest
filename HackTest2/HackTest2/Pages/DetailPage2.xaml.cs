@@ -19,7 +19,17 @@ namespace HackTest2.Pages
 		{
 			InitializeComponent ();
 			ProvideData();
-			suggestionList = new List<string> { "1", "2", "3" };
+			suggestionList = new List<string>
+			{
+				"• Biletik - (2 for 1 deal)",
+				"• Yemek Evi -10 % discount",
+				"• buBilet - 20 % discount",
+				"• Divago - 5 % discount",
+				"• Toyner - 5 % discount",
+				"• Nixe - 5 % discount",
+				"• Adidos - 5 % discoun",
+				"• T & R - 10 % discount"
+			};
 			IsOpen = true;
 			
 		}
@@ -129,13 +139,34 @@ namespace HackTest2.Pages
 			switch (type)
 			{
 				case ListType.compaing:
-					suggestionList = new List<string> { "1", "2", "3" };
+					suggestionList = new List<string>
+					{
+						"• Biletik - (2 for 1 deal)",
+						"• Yemek Evi -10 % discount",
+						"• buBilet - 20 % discount",
+						"• Divago - 5 % discount",
+						"• Toyner - 5 % discount",
+						"• Nixe - 5 % discount",
+						"• Adidos - 5 % discoun",
+						"• T & R - 10 % discount"
+					};
 					break;
 				case ListType.investment:
-					suggestionList = new List<string> { "4", "5", "6" };
+					suggestionList = new List<string>
+					{
+						"• Buy \"YKBNK\" today",
+						"• Sell \"KASCTR\"",
+						"• Hold \"TUPRS\""
+					};
 					break;
 				case ListType.banking:
-					suggestionList = new List<string> { "7", "78", "9" };
+					suggestionList = new List<string>
+					{
+						"• Increase your credit card limit",
+						"• Refinance your credit card debt",
+						"• Pay your monthly credit amount",
+						"• Add 100 TRY to your deposit"
+					};
 					break;
 				default:
 					break;

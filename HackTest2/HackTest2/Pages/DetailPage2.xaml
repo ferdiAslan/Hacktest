@@ -39,19 +39,19 @@
 					<TapGestureRecognizer Tapped="OpenFrame3"/>
 				</views:View1.GestureRecognizers>
 			</views:View1>
-			
-			<Frame Grid.ColumnSpan="3" HeightRequest="150" x:Name="frame" IsVisible="False" Margin="50,0,50,30" BackgroundColor="#66AFEEEE"
+
+			<Frame Grid.ColumnSpan="3" HeightRequest="150" x:Name="frame" IsVisible="False" Margin="50,0,50,30" BackgroundColor="#66EDEDED"
 				   HorizontalOptions="FillAndExpand" CornerRadius="10" VerticalOptions="End" InputTransparent="True">
-				<!--<Label Text="Ferdi" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center"/>-->
 				<StackLayout x:Name="stack"/>
 			</Frame>
-			<ContentView Grid.ColumnSpan="3" Grid.Row="2" BackgroundColor="#2987D6" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+			<Grid Grid.ColumnSpan="3" Grid.Row="2" BackgroundColor="#2987D6" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 				<views:View1 x:Name="mapImage" SourceImage="map.png" HorizontalOptions="Center" IsVisible="False"
 							 HeightRequest="40" WidthRequest="40" VerticalOptions="Center" />
-				<ContentView.GestureRecognizers>
+				<Image Source="badge.png" HeightRequest="40" WidthRequest="40" VerticalOptions="Center" HorizontalOptions="End"/>
+				<Grid.GestureRecognizers>
 					<TapGestureRecognizer Tapped="mapTapped"/>
-				</ContentView.GestureRecognizers>
-			</ContentView>
+				</Grid.GestureRecognizers>
+			</Grid>
 		</Grid>
     </ContentPage.Content>
 </ContentPage>
